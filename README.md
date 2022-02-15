@@ -55,6 +55,30 @@ The code in this repository is distributed in the following manner
 
 2. r5_baremetalL This contains the sourcefiles which would run on the r5 processor.
 
+
+## Creating Application For R5 Processor
+
+As it has been already described that R5 Processor alongside with A53 processor would be used in this project. Therefore, we would need a software application on R5 that would take messages from the linux running on A53 and control the LCD display with the help of these messages. Hence there is a requirement to use the R5 processor.
+
+### Modifying The Current BSP
+
+In order to create a software application on R5 processor, we need to open up Vitis. Followed by creating a platform project. In order to do so click on File > New > Create a Platoform project. As a window opens up, click on 'Create a new platform from hardware' and choose the XSA file exported from Vivado.
+
+We need to do a few chagnes to the configuration of the platform,
+
+- We want to enable a new domain R5 Processor
+- Then we want to include OpenAMP and libmetal Libraries
+
+To add a new domain, click on the platform.spr file in the platform project. A new tab will open up. Left menu click on the + icon to add a new domain. Give it a name, e.g. R5 system and select `psu_cortexr5_0` as the processor and click OK. This would add a new domain to the list of domains. 
+
+As we have the new domain, we can add support for openamp and libmetal libraries. To do so, click on the Board Support Package under the new domain, and click on 'Modify BSP Settings' a new window will pop up. On the left click on 'Overview' and check libmetal and openamp options. 
+
+### Creating The R5 Application
+
+Go to File > New > Application Project. Select the current platform; Select psu_cortexr5_0 as target processor; and create an empty c++ application. Copy the files from r5_baremetal/src to this project's src folder and click build project. When the build finishes, an executable `elf` files would have been generated in the Debug folder inside this project. This file would be then used in the petalinux application.
+
+
+
 ## Petalinux Installation
 
 ### Create Petalinux Project

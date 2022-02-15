@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="mdx" location="/home/hamza/Work/KIRETT/testing/pmod_mdts_workspace/mdx" platform="/home/hamza/Work/KIRETT/testing/pmod_mdts_workspace/design_1_wrapper_1_X/export/design_1_wrapper_1_X/design_1_wrapper_1_X.xpfm" platformUID="xilinx:te0802_2cg_1e::0.0(custom)" systemProject="r5_mailing_system" sysConfig="design_1_wrapper_1_X" runtime="C/C++" cpu="standalone_psu_cortexr5_0" cpuInstance="psu_cortexr5_0" os="standalone" language="CPP" mssSignature="1725f202fd0f33134b1384b469ed0caa">
+  <configuration name="Debug" id="xilinx.gnu.arm.r5.exe.debug.1990623559">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.r5.exe.release.692873662" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
