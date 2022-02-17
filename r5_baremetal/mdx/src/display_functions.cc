@@ -1,6 +1,5 @@
 
 #include "display_functions.h"
-
 #include "MyDisp.h"
 
 #include <map>
@@ -124,8 +123,6 @@ void set_pixel(std::string args, bool* ret) {
 	int y = std::stoi( out[1]);
 	int clr = std::stoi( out[2]);
 
-	xil_printf("this is my argument");
-	xil_printf("x,y,z %s, %s, %s",out[0],out[1],out[2]);
 	*ret = mydisp.setPixel(x, y, clr);
 }
 
@@ -178,7 +175,9 @@ void draw_rectangle(std::string args, bool* ret) {
 void draw_ellipse(std::string args, bool* ret) {
 	std::vector <std::string> out;  tokenize(args, out);
 	bool fill = true;
-	if( std::stoi( out[0])==0)
+	int out0 =std::stoi( out[0]);
+
+	if( out0==0)
 		fill = false;
 
 	int x1 = std::stoi( out[1]);

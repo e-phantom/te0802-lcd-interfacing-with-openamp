@@ -18,7 +18,7 @@
 #include <pthread.h>
 #include <string.h>
 #include <linux/rpmsg.h>
-#include<strings.h>
+#include <strings.h>
 
 #define WIDTH 320
 #define HEI 240
@@ -95,7 +95,7 @@ void 		deleteImage(unsigned int hbmp){
 */
 void 		setPixel(int x, int y, unsigned int clr){
 	char  args[50];
-	sprintf(args,"set_pixel-%d;%d,%ld",x,y,clr);
+	sprintf(args,"set_pixel-%d;%d;%ld",x,y,clr);
 	function_call(args);
 
 }
@@ -107,7 +107,7 @@ unsigned int	getPixel(int x, int y){
 }
 void 		drawLine(int x1, int y1, int x2, int y2){
 	char  args[50];
-	sprintf(args,"draw_line-%d;%d,%d,%d",x1,y1,x2,y2);
+	sprintf(args,"draw_line-%d;%d;%d;%d",x1,y1,x2,y2);
 	function_call(args);
 
 }
@@ -119,12 +119,12 @@ void 		drawArc(int x1, int y1, int x2, int y2,	int xr1, int yr1, int xr2, int yr
 }
 void 		drawRectangle(bool fill, int x1, int y1, int x2, int y2){
 	char  args[50];
-	sprintf(args,"draw_rectangle-%d;%d;%d,%d,%d",fill,x1,y1,x2,y2);
+	sprintf(args,"draw_rectangle-%d;%d;%d;%d;%d",fill,x1,y1,x2,y2);
 	function_call(args);
 }
 void 		drawEllipse(bool fill, int x1, int y1, int x2, int y2){
 	char  args[50];
-	sprintf(args,"draw_ellipse-%d;%d;%d,%d,%d",fill,x1,y1,x2,y2);
+	sprintf(args,"draw_ellipse-%d;%d;%d;%d;%d",fill,x1,y1,x2,y2);
 	function_call(args);
 }
 void 		drawImage(char * name, int x, int y){

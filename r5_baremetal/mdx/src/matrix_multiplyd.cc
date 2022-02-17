@@ -87,18 +87,13 @@ static int rpmsg_endpoint_cb(struct rpmsg_endpoint *ept, void *data, size_t len,
 
 	char* new_data = (char *) data;
 	std::string args (new_data);
-	LPRINTF("\nnewdata received: %s",new_data);
 	std::vector <std::string> out;
+
 	if(strlen(new_data)>0){
 
-		LPRINTF("\nstarting display");
-		LPRINTF("\nargs %s",args.c_str());
-
 		tokenize_function(args, out);
-		LPRINTF("\n outs: %s %s",out[0], out[1]);
-
 		function_call(out[0], out[1], ret);
-		LPRINTF("\ncall successful");
+
 	}else{
 		LPRINTF("\nwrong display string");
 	}
@@ -153,7 +148,7 @@ int main(int argc, char *argv[])
 	struct rpmsg_device *rpdev;
 	int ret;
 
-	LPRINTF("Starting application v5--------------------...\n");
+	LPRINTF("Starting application v6--------------------...\n");
 
 	/* Initialize platform */
 	ret = platform_init(argc, argv, &platform);
